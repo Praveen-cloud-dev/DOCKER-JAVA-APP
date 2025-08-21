@@ -1,19 +1,16 @@
-# stable official Java runtime base image
+#base image ko pull karega jisme req tools and libraries hogi
 FROM openjdk:17-jdk-alpine
 
-# metadata
-LABEL maintainer="your-email@example.com"
-LABEL version="1.0"
-LABEL description="A simple Java application"
-
-# working directory
+#folder create karege jaha app ka code store hoga
 WORKDIR /app
 
-# Copy source code into the container
+#souce code ko copy karege app me jo ki hamara container hai
 COPY src/Main.java /app/Main.java
 
-# Compile the Java code
+#compile karege application code ko
 RUN javac Main.java
 
-# Run the Java application when the container starts
-CMD ["java", "Main"]
+#run karege application , here we injecting command
+CMD ["java","Main"]
+
+
